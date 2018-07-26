@@ -1,0 +1,254 @@
+﻿@using PortalClientesCoprTranser.Models.Viajes;
+
+@{
+    
+    Viajes detViaje = ViewBag.detViaje;
+}
+@if (ViewData.ModelState.Any(x => x.Value.Errors.Any()))
+{
+    <div class="alert alert-primary">
+        <a href="#" class="close" data-dismiss="alert">×</a>
+        @Html.ValidationSummary(true, "Aviso:")
+        @Html.ValidationMessage("Error")
+    </div>
+}
+else
+{
+
+
+
+    <div class="row-Dl">
+        <div class="col">
+            <dl class="row">
+                <dt class="col-6">Nro. DT:</dt>
+                <dd class="col-6">@detViaje.DT</dd>
+
+                <dt class="col-6">Trailer:</dt>
+                <dd class="col-6">@detViaje.TRAILER</dd>
+
+                <dt class="col-6">Tiempo de cargue:</dt>
+                <dd class="col-6">@if (detViaje.TIEMPOCAR != "")
+                                  {
+                    @detViaje.TIEMPOCAR
+                                  }
+                                  else
+                                  {
+                    <span>-</span>
+                                  }</dd>
+
+                <dt class="col-6">Tiempo de descargue:</dt>
+                <dd class="col-6">@if (detViaje.TIEMPODES != "")
+                                  {
+                    @detViaje.TIEMPODES
+                                  }
+                                  else
+                                  {
+                    <span>-</span>
+                                  }</dd>
+            </dl>
+        </div>
+    </div>
+    <script>
+        var opcioniesListPsos = {
+            "scrollY": "10rem",
+            "scrollCollapse": true
+        }
+        $('#table_regPos').DataTable(opcioniesListPsos);
+    </script>
+
+    <div class="row">
+        <div class="table-responsive">
+            <h4>Reporte de posicionamiento</h4>
+            <table id="table_regPos" class="display table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Ubicacion</th>
+                    </tr>
+                </thead>
+                <tbody style="font-size: 0.6rem;">
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                    <tr>
+                        <td>20/07/2018</td>
+                        <td>un lugar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+}

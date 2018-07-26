@@ -1,0 +1,145 @@
+﻿@using PortalClientesCoprTranser.Models.Facturacion
+
+@{
+    detCartera detCartera = new detCartera();
+    detCartera = ViewBag.detCartera;
+
+    <div class="row">
+        <div class="col">
+            <div class="cont-tedCart">
+                <div class="row">
+                    <div class="col">
+                        <span class="i-iconCart"><i class="fas fa-dollar-sign"></i></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span class="desc-titdetCart">Total Cartera</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span class="total-detCart money">@detCartera.TOTAL_CARTERA.ToString("#")</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if (detCartera.TOTAL_FAC_CORRIENTE != 0)
+        {
+            <div class="col">
+                <div class="cont-tedCart">
+                    <div class="row">
+                        <div class="col">
+                            <span class="i-iconCart">@detCartera.TOTAL_FAC_CORRIENTE</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="desc-titdetCart">Facturas Corrientes</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="total-detCart money">@detCartera.SUMA_VALOR_CORRIENTE.ToString("#")</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        
+        @if (detCartera.TOTAL_FAC_MES1 != 0)
+        {
+            <div class="col">
+                <div class="cont-tedCart">
+                    <div class="row">
+                        <div class="col">
+                            <span class="i-iconCart">@detCartera.TOTAL_FAC_MES1</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="desc-titdetCart">Facturas 0-30</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="total-detCart money">@detCartera.SUMA_VALOR_MES1.ToString("#")</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (detCartera.TOTAL_FAC_MES2 != 0)
+        {
+            <div class="col">
+                <div class="cont-tedCart">
+                    <div class="row">
+                        <div class="col">
+                            <span class="i-iconCart">@detCartera.TOTAL_FAC_MES2</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="desc-titdetCart">Facturas 31-60</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="total-detCart money">@detCartera.SUMA_VALOR_MES2.ToString("#")</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (detCartera.TOTAL_FAC_MES3 != 0)
+        {
+            <div class="col">
+                <div class="cont-tedCart">
+                    <div class="row">
+                        <div class="col">
+                            <span class="i-iconCart">@detCartera.TOTAL_FAC_MES3</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="desc-titdetCart">Facturas 61-90</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="total-detCart money">@detCartera.SUMA_VALOR_MES3.ToString("#")</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (detCartera.TOTAL_FAC_MES4 != 0)
+        {
+            <div class="col">
+                <div class="cont-tedCart">
+                    <div class="row">
+                        <div class="col">
+                            <span class="i-iconCart">@detCartera.TOTAL_FAC_MES4</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="desc-titdetCart">Facturas mas de 90</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span class="total-detCart money">@detCartera.SUMA_VALOR_MES4.ToString("#")</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+<script>
+    $(function () {
+        $('.money').formatCurrency();
+    })
+</script>

@@ -1,0 +1,177 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="~/Recursos/js/js_Prov/datatables.net/datatables.min.css" rel="stylesheet" />
+    <link href="~/Recursos/js/js_Prov/jqueryUI/jquery-ui.min.css" rel="stylesheet" />
+
+    <link href="~/Recursos/js/js_Prov/leaflet/leaflet.css" rel="stylesheet" />
+
+    <link href="~/Recursos/Css/css_Home.css?v4.0" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <script src="~/Recursos/js/js_Prov/jquery/jquery.min.js"></script>
+    <!--Section app-->
+    <section>
+        <div class="contAPP">
+            <!--Encabezado-->
+            <section>
+                <!--Nav-->
+                <header>
+                    <nav class="navbar navbar-expand-lg navbar-light bar-custom">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="container-fluid">
+                            <div class="cont-LogoHead">
+                                <a href="@Url.Action("Inicio", "Home")">
+                                    <img src="~/Recursos/img/Logo_Head.png" width="80" />
+                                </a>
+                            </div>
+                            <div class="conItemsHead">
+
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <div class="col-ul-OpcHeaders">
+                                        <li class="liLogout">
+                                            <a href="@Url.Action("Logout", "Login")">Salir </a>
+                                        </li>
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+            </section>
+            <!--Fondo /bodyCristal-->
+            <section class="bodyBackground">
+                <div class="cont-tablero">
+                    <div class="card-tablero-Display text-center">
+                        <div class="card-body cont-Views">
+                            @RenderBody()
+                        </div>
+                        <div class="card-footer footTablero">
+                            <div class="container-fluid opcMenu">
+                                <div class="opcsMain">
+                                    <div class="col opcMenu">
+                                        <div class="cont-Opc">
+                                            <div class="iconMenu">
+                                                <a href="@Url.Action("Inicio", "Home")">
+                                                    <img class="imgMenuOpc" src="~/Recursos/img/home_ball.png" />
+                                                </a>
+                                            </div>
+                                            <span class="nameOpc">Inicio</span>
+                                        </div>
+                                    </div>
+                                    <div class="col opcMenu">
+                                        <div class="cont-Opc">
+                                            <div class="iconMenu">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-dropOpc dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <img class="imgMenuOpc" src="~/Recursos/img/facturacionMenu.png" />
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="@Url.Action("Pendientes", "Facturacion")">Facturas pendientes</a>
+                                                        <a class="dropdown-item" href="@Url.Action("Vencidas", "Facturacion")">Facturas vencidas</a>
+                                                        <a class="dropdown-item" href="@Url.Action("Estcartera", "Facturacion")">Estado de cartera</a>
+                                                        <a class="dropdown-item" href="@Url.Action("Histfacturas", "Facturacion")">Histórico de facturas</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="nameOpc">Facturacion</span>
+                                        </div>
+                                    </div>
+                                    <div class="col opcMenu">
+                                        <div class="cont-Opc">
+                                            <div class="iconMenu">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-dropOpc dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <img class="imgMenuOpc" src="~/Recursos/img/viajes_Ball.png" />
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="@Url.Action("ViajesCurso", "Viajes")">Viajes en curso</a>
+                                                        <a class="dropdown-item" href="@Url.Action("HistViajes", "Viajes")">Histórico de viajes</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="nameOpc">Viajes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="OpcsEsp">
+                                    <div class="col opcMenu">
+                                        <div class="cont-Opc">
+                                            <div class="iconMenu">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-dropOpc dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <img class="imgMenuOpc" src="~/Recursos/img/seting_Ball.png" />
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="@Url.Action("CambioContraseña", "administracion")">Cambio de contraseña</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span class="nameOpc">Ajustes</span>
+                                        </div>
+                                    </div>
+                                    <div class="col opcMenu">
+                                        <div class="cont-Opc">
+                                            <div class="iconMenu">
+                                                <a href="@Url.Action("Ayuda", "Home")">
+                                                    <img class="imgMenuOpc" src="~/Recursos/img/help_Ball.png" />
+                                                </a>
+                                            </div>
+                                            <span class="nameOpc">Ayuda</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Footer-->
+            <section>
+                <footer>
+                    <div class="container">
+                        <div class="row">
+                            <span class="copy text-center">&copy Transer s.a Todos los derechos reservados 
+                            </span>
+                        </div>
+                    </div>
+                </footer>
+            </section>
+        </div>
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="~/Recursos/js/js_Prov/jqueryUI/jquery-ui.min.js"></script>
+    @*   <script src="~/Recursos/js/js_Prov/chart.js/Chart.min.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+    @*    <script src="~/Recursos/js/js_Prov/datatables.net/datatables.min.js"></script>*@
+    <script src="~/Recursos/js/js_Prov/formatCurrency/jquery.formatCurrency-1.4.0.js"></script>
+    <script src="~/Recursos/js/js_Prov/formatCurrency/jquery.formatCurrency-1.4.0.min.js"></script>
+    <script src="~/Recursos/js/js_Prov/formatCurrency/jquery.formatCurrency.es-CO.js"></script>
+    <script src="~/Recursos/js/js_Prov/datatables.net/datatables.js"></script>
+    <script src="~/Recursos/js/js_Prov/jquery-validation/jquery.validate.min.js"></script>
+
+    <script src="~/Recursos/js/js_Prov/leaflet/leaflet.js"></script>
+
+    <script src="~/Recursos/js/js_Edit/js_Chart-Edit.js?v1.2"></script>
+    <script src="~/Recursos/js/js_Edit/js_Tables-Edit.js?v1.3"></script>
+    <script src="~/Recursos/js/js_Edit/js_Custom-Edit.js?v2.0"></script>
+</body>
+</html>

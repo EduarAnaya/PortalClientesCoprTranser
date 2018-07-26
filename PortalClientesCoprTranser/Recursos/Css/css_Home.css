@@ -1,0 +1,520 @@
+﻿/*
+==========================================================
+General
+==========================================================
+*/
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: white !important;
+    /*color: #dcdcdc;*/
+}
+
+.contAPP {
+    /* background: url(../../Recursos/img/backgroundAppFull.png)center no-repeat no-repeat #eeeaed; */
+    /* background: url(http://visio.systems/wp-content/uploads/2017/08/surface_dark_background_texture_50754_1920x1080.jpg)center no-repeat no-repeat #dcdcdc; */
+    /* background: url(https://c1.staticflickr.com/9/8700/16475705553_0703df5646_b.jpg)center no-repeat no-repeat #dcdcdc; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    /*background-color: #dcdcdc;*/
+    color: black;
+}
+
+.visible {
+    display: none;
+}
+
+.card-Transparente {
+    background-color: rgba(0,0,0,.075);
+    /*color: #dcdcdc;*/
+    height: 100%;
+}
+
+img.ui-datepicker-trigger {
+    width: 1pc;
+    position: absolute;
+    margin-right: auto;
+    right: 10px;
+    top: 40px;
+}
+
+[class*='fa-'] {
+    margin-right: 5px;
+}
+
+ol.breadcrumb {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    font-size: x-small;
+}
+
+
+/*-----------------Scroll barr---------------------*/
+.dataTables_scrollBody::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.dataTables_scrollBody::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 5px;
+}
+
+/* Handle */
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+    background: #e6e6e6;
+    border-radius: 1px;
+}
+
+    /* Handle on hover */
+    .dataTables_scrollBody::-webkit-scrollbar-thumb:hover {
+        background: #b30000;
+    }
+
+/*------------------------- Custom tablas from Datatables.net---------------------------------------*/
+tbody {
+    font-size: 0.8rem;
+}
+
+select, input[type="search"] {
+    font-size: 1rem;
+    line-height: 1.5;
+    /*color: #dcdcdc;*/
+    /*background-color: transparent;*/
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/*.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: white !important;
+}
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+        color: white !important;
+    }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+            color: white !important;
+        }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        color: white !important;
+    }*/
+
+td, tr {
+    background-color: #bdbdbd40 !important;
+}
+
+    tr:hover {
+        background-color: rgba(0, 0, 0, 0.16) !important;
+    }
+
+div#table_regPos_length {
+    display: none;
+}
+
+div#table_regPos_filter {
+    display: none;
+}
+/*---------------------------------------------------------------------*/
+/*--------------Barra de navegacion-----------------*/
+.bar-custom {
+    background-color: #8c8c8c;
+}
+
+li.liLogout {
+    list-style: none;
+}
+
+.col-ul-OpcHeaders {
+    width: 100%;
+    display: contents;
+}
+
+.fa, .fas {
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+/*a {
+    color: white !important;
+}*/
+
+.col-ul-OpcHeaders {
+    color: white;
+}
+
+.dropdown-menu {
+    background-color: #a5a6a7;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #f8f9fa52;
+}
+
+
+/*-------Panel---------*/
+.cont-tablero {
+    /* background-color: #ffffff; */
+    box-shadow: inset 0px 0px 100px 10px rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px 6px #ffffff;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    /* background-color: white; */
+    /*background-image: url(../../Recursos/img/img_Glass.png);*/
+    background-size: 100% 100%;
+}
+
+.card {
+    background-color: transparent;
+}
+
+.card-footer.footTablero {
+    padding-top: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.card-body.cont-Views {
+    min-height: calc(25rem);
+}
+
+.card-footer.text-muted.footTablero {
+    border: none;
+    background-color: transparent;
+}
+
+.row.row-total {
+    padding-top: 1rem;
+}
+
+.badge-info {
+    color: #fff;
+    background-color: #17a2b8;
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+.desc-totals {
+    bottom: 0;
+    position: absolute;
+    font-size: medium;
+}
+
+.col-total {
+    margin: auto;
+}
+/*----------------------------------------------*/
+/*-------------Menu -Panel ----------------*/
+.container-fluid.opcMenu {
+    display: flex;
+}
+
+.opcsMain {
+    width: 40%;
+    display: flex;
+}
+
+.OpcsEsp {
+    width: 20%;
+    margin-left: auto;
+    margin-right: 60px;
+    display: flex;
+}
+
+
+
+.btn-dropOpc {
+    background-color: transparent;
+    padding: 0;
+}
+
+img.imgMenuOpc {
+    width: 3rem;
+}
+
+span.nameOpc {
+    /*color: #dcdcdc;*/
+}
+
+/*.sombra {
+    box-shadow: 0 5px 10px rgb(155, 153, 154);
+    width: 80px;
+    height: 10px;
+    background-color: transparent;
+    border-radius: 50%;
+    margin: 0 auto 5px auto;
+}*/
+
+/*-----------------------det Cartera---------------------------------*/
+.card-Foot-Det {
+    min-height: 135px;
+    padding: 0;
+}
+
+span.i-iconCart {
+    font-size: 2.5rem;
+    color: #6c757d;
+}
+
+span.desc-titdetCart {
+    font-size: 1rem;
+    color: #28a745;
+    font-weight: bold;
+}
+
+span.total-detCart {
+    color: #343a40;
+    font-weight: bolder;
+    font-size: 0.9rem;
+}
+
+/*-------------------- Footer -------------------------*/
+footer {
+    padding-top: 1rem;
+}
+
+ul.list-data {
+    list-style: none;
+    padding: 0;
+}
+
+span.copy.text-center {
+    margin: auto;
+    color: #585858;
+}
+
+.icon-Info {
+    color: #ffd900;
+}
+
+.text-decInfo {
+    color: #ddd;
+}
+
+/*---------------------------------------------------------------------*/
+
+/*
+==========================================================
+Fin - General
+==========================================================
+*/
+
+/*
+==========================================================
+VIEW FACTURACION
+==========================================================
+*/
+
+.rowSearch {
+    margin-bottom: 0.5rem;
+}
+
+a#a-detalFac {
+    right: 10px;
+    bottom: 10px;
+    position: absolute;
+    color: #495057;
+}
+
+/*
+==========================================================
+VIEW VIAJES
+==========================================================
+*/
+
+i#btnHide {
+    cursor: pointer;
+}
+
+.card.card-contViajes {
+    background-color: transparent;
+}
+
+.card-body.conDT {
+    padding: 0 1.25rem 0 1.25rem;
+}
+
+dt.col-6 {
+    font-size: smaller;
+    text-align: right;
+}
+
+dd.col-6 {
+    font-size: small;
+    text-align: left;
+}
+
+.card-body.card-bodyDetViajes {
+    padding: 0 1.25rem 0 1.25rem;
+}
+
+img.geoPos {
+    cursor: pointer;
+}
+
+.map {
+    height: 30pc;
+    width: 100%;
+}
+
+/*
+==========================================================
+VIEW ADMINISTRACION
+==========================================================
+*/
+.cont-form {
+    margin: auto;
+    max-width: 400px;
+    text-align: left;
+}
+
+.col-iconlogo {
+    margin: auto;
+}
+
+img.imgLogion {
+    width: 5rem;
+}
+
+/*
+==========================================================
+Media Queries
+==========================================================
+*/
+/*Extra small devices (portrait phones, less than 576px)*/
+/*No media query for `xs` since this is the default in Bootstrap*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+    body {
+    }
+
+    .cont-LogoHead {
+        display: none;
+    }
+
+    section.bodyBackground {
+        padding: 0;
+    }
+
+    .container-fluid.opcMenu {
+        display: block;
+    }
+
+    .OpcsEsp {
+        width: 30%;
+        display: flex;
+        margin: 0;
+    }
+}
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    body {
+    }
+
+    .cont-LogoHead {
+        position: absolute;
+        right: 0;
+        top: 15px;
+    }
+
+    section.bodyBackground {
+        padding: 0.1rem 1rem;
+    }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    body {
+    }
+
+    section.bodyBackground {
+        padding: 1rem;
+    }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    body {
+    }
+
+    .cont-LogoHead {
+        position: initial;
+    }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    body {
+    }
+
+    section.bodyBackground {
+        padding: 2rem;
+        padding-bottom: 0;
+    }
+}
+
+/*
+    -----------------------------------------------------
+/*Extra small devices (portrait phones, less than 576px)
+@media (max-width: 300px) {
+    .cont-LogoHead {
+        display: none;
+    }
+}
+
+@media (max-width: 575.98px) {
+    body {
+    }
+
+    .cont-LogoHead {
+        position: absolute;
+        right: 0;
+        top: 15px;
+    }
+
+    section.bodyBackground {
+        padding: 0.5rem;
+    }
+}
+
+/*Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+    body {
+    }
+}
+
+/*Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+    body {
+    }
+
+    .cont-LogoHead {
+        position: absolute;
+        right: 0;
+        top: 15px;
+    }
+}
+
+/*Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+    body {
+    }
+
+    section.bodyBackground {
+        padding: 3rem;
+    }
+}*/

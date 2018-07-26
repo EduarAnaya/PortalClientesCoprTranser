@@ -1,0 +1,36 @@
+﻿@using PortalClientesCoprTranser.Models.Facturacion;
+
+@{
+    detCartera dt= new detCartera();
+    dt= ViewBag.minMax;
+    <div class="row">
+        <div class="col">
+            <div class="cont-tedCart">
+                <div class="row">
+                    <div class="col">
+                        <span class="desc-titdetCart"><i class="fas fa-chart-line"></i>Min</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span class="total-detCart money">@dt.MIN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="cont-tedCart">
+                <div class="row">
+                    <div class="col">
+                        <span class="desc-titdetCart"><i class="fas fa-chart-line"></i>Max</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span class="total-detCart money">@dt.MAX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

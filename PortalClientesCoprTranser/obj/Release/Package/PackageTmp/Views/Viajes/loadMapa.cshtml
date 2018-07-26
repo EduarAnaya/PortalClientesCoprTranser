@@ -1,0 +1,72 @@
+﻿<div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 80%;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Ubicación del Vehículo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div id="map" class="map"></div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+    </div>
+</div>
+<script>
+    function LoadMap() {
+        var map = L.map('map').setView([5.804, -73.01], 9 );
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var strartIcon = L.icon({
+            iconUrl: '../../Recursos/img/truck_Pos.png',
+            iconSize: [30, 30], // size of the icon
+            shadowSize: [50, 64], // size of the shadow
+            iconAnchor: [10, 10], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor: [15, -5] // point from which the popup should open relative to the iconAnchor
+        });
+        var transicionIcon = L.icon({
+            iconUrl: '../../Recursos/img/truck_Pos_Tran.png',
+            iconSize: [30, 30], // size of the icon
+            shadowSize: [50, 64], // size of the shadow
+            iconAnchor: [, 0], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor: [15, -5] // point from which the popup should open relative to the iconAnchor
+        });
+        var stoptIcon = L.icon({
+            iconUrl: '../../Recursos/img/truck_Pos_Stop.png',
+            iconSize: [30, 30], // size of the icon
+            shadowSize: [50, 64], // size of the shadow
+            iconAnchor: [0, 0], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor: [15, -5] // point from which the popup should open relative to the iconAnchor
+        });
+
+        L.marker([4.731, -74.19], { icon: strartIcon }).addTo(map)
+            .bindPopup('Primera posicion')
+            .openPopup();
+
+
+        L.marker([4.95, -73.95], { icon: transicionIcon }).addTo(map)
+          .bindPopup('Punto [5.804, -73.00]')
+          .openPopup();
+
+        L.marker([4.95, -73.95], { icon: transicionIcon }).addTo(map)
+          .bindPopup('Punto [4.95, -73.95]')
+          .openPopup();
+
+        L.marker([5.251, -73.85], { icon: transicionIcon }).addTo(map)
+         .bindPopup('Punto [5.251, -73.85]')
+         .openPopup();
+
+
+        L.marker([5.338, -73.81], { icon: stoptIcon }).addTo(map)
+            .bindPopup('Ultima Posicion')
+            .openPopup();
+    }
+</script>

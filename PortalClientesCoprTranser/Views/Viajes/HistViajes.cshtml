@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "HistViajes";
+    Layout = "~/Views/_Layouts/_LayoutPrincipal.cshtml";
+}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="@Url.Action("Inicio", "Home")">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Viajes</li>
+        <li class="breadcrumb-item active" aria-current="page">Histórico Viajes</li>
+    </ol>
+</nav>
+
+<div class="container-fuid">
+    <div class="row">
+        <div class="col" style="text-align: left;">
+            <h3>Histórico de Viajes</h3>
+        </div>
+        <form id="frm-search-histo" style="margin-right: 20px;" aria-describedby="historicoHelpBlock">
+            <div class="form-row rowSearch">
+                <div class="col">
+                    <label for="fecIni"><strong>Fecha Inicial</strong></label>
+                    <input type="text" class="form-control form-control-sm" name="fechaIni" value="@DateTime.Now.ToString("yyyy-MM-dd")" id="fecIni" required disabled/>
+                </div>
+                <div class="col">
+                    <label for="fecFin">
+                        <strong>Fecha Final</strong>
+                    </label>
+                    <input type="text" class="form-control form-control-sm" name="fechaFin" value="@DateTime.Now.ToString("yyyy-MM-dd")" id="fecFin" required disabled/>
+                </div>
+                <div class="col" style="display: flex;">
+                    <button type="submit" class="btn btn-success" style="margin: auto 0 0 0;"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <small id="historicoHelpBlock" class="form-text text-muted text-left">Indique un rango de fechas para realizar una búsqueda.
+            </small>
+        </form>
+
+
+    </div>
+    <div class="row">
+        <div id="cont-resultBusqueda" class="col">
+        </div>
+    </div>
+</div>

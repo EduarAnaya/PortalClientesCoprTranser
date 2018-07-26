@@ -1,0 +1,85 @@
+﻿@model IEnumerable<PortalClientesCoprTranser.Models.Viajes.Viajes>
+
+@{
+    ViewBag.Title = "ViajesCurso";
+    Layout = "~/Views/_Layouts/_LayoutPrincipal.cshtml";
+}
+@using PortalClientesCoprTranser.Models.Viajes;
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="@Url.Action("Inicio", "Home")">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Viajes</li>
+        <li class="breadcrumb-item active" aria-current="page">Viajes en Curso</li>
+    </ol>
+</nav>
+<div class="container-fuid">
+    <div class="row">
+        <div class="col" style="text-align: left;">
+            <h3>Viajes en Curso</h3>
+        </div>
+    </div>
+    <div class="row">
+    </div>
+</div>
+<div class="row cont-Col">
+    <div id="cont-tableViajesAct" class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div class="card card-Transparente">
+            <div class="card-header text-left">
+                <i class="fas fa-list-ol"></i>Listado
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="table_viajActuales" class="display table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Orden</th>
+                                <th>Planilla</th>
+                                <th>Fecha</th>
+                                <th>Vehiculo</th>
+                                <th>Origen</th>
+                                <th>Destino</th>
+                                <th>Conductor</th>
+                                <th>Producto</th>
+                                <th>Ubicación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var viaje in Model)
+                            {
+                                <tr>
+                                    <td class="idOrca">@viaje.ORDEN</td>
+                                    <td>@viaje.PLANILLA</td>
+                                    <td>@viaje.FECHA</td>
+                                    <td>@viaje.VEHICULO</td>
+                                    <td>@viaje.CIUORIGEN</td>
+                                    <td>@viaje.CIUDESTINO</td>
+                                    <td>@viaje.NOMB_CONDUCTOR @viaje.APELL_CONDUCTOR</td>
+                                    <td>@viaje.NOMPRODUCT</td>
+                                    <td>
+                                        <img class="geoPos" src="~/Recursos/img/tag_Ubicacion.png" width="30" />
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cont-tableDetll" class="col-xl-3 col-lg-4 col-md-12 col-sm-12 visible">
+        <div class="card card-Transparente">
+            <div class="card-header text-left">
+                <div style="display: flex;">
+                    <i class="fas fa-plus-square"></i>Detalles
+                    <i id="btnHide" class="fas fa-eye-slash" style="margin-left: auto;"></i>
+                </div>
+            </div>
+            <div id="card-bodyDetViajes" class="card-body card-bodyDetViajes">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+</div>

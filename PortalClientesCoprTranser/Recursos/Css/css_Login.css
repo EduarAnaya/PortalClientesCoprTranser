@@ -1,0 +1,84 @@
+﻿body {
+    background-color: #e9e9e9 !important;
+}
+
+.item-center {
+    text-align: center;
+}
+
+.img-Logo {
+    width: 5rem;
+}
+
+.ContAppLogin {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 5rem;
+    background-color: #ffffff !important;
+    max-width: 39rem;
+    border-radius: 10px;
+}
+
+    .ContAppLogin #formLogin {
+        margin: auto;
+        max-width: 70%;
+    }
+
+#formLogin #SendLogin {
+    margin-top: 2rem;
+}
+
+#formLogin input {
+    margin-bottom: 0.51rem;
+}
+
+.imgLogoHead {
+    width: 5rem;
+}
+
+@media (max-width: 400px) {
+    body {
+    }
+
+    .ContAppLogin {
+        margin-top: 0;
+    }
+}
+/*Dispositivos extra pequeños (teléfonos de retrato, menos de 576px)*/
+@media (max-width: 575.98px) {
+    body {
+    }
+}
+
+/*Dispositivos pequeños (teléfonos apaisados, 576px y más)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    body {
+    }
+
+    .ContAppLogin {
+        margin-top: 0;
+    }
+}
+
+/*Dispositivos medianos (tabletas, 768px y más)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    body {
+    }
+}
+
+/*Dispositivos grandes (computadoras de escritorio, 992px y más) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    body {
+    }
+}
+
+/* Dispositivos extragrandes (escritorios grandes, 1200px y más) */
+@media (min-width: 1200px) {
+    body {
+    }
+
+    section#RenderBody {
+        margin-top: 5rem;
+    }
+}

@@ -1,0 +1,160 @@
+﻿@model PortalClientesCoprTranser.Models.administracion.AccountViewModel
+
+@{
+    ViewBag.Title = "CambioContraseña";
+    Layout = "~/Views/_Layouts/_LayoutPrincipal.cshtml";
+}
+@if (ViewData.ModelState.Any(x => x.Value.Errors.Any()))
+{
+    <script>
+
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.classList.add('was-validated');
+                });
+            }, false);
+        })();
+
+    </script>
+}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="@Url.Action("Inicio", "Home")">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Administración</li>
+        <li class="breadcrumb-item active" aria-current="page">Cambio de Contraseña</li>
+    </ol>
+</nav>
+<div class="container">
+    <div class="cont-form">
+        <div class="row">
+            <div class="col-iconlogo">
+                <img class="imgLogion" src="~/Recursos/img/logSecure128x128.png" />
+            </div>
+        </div>
+        <div class="row">
+            @using (Html.BeginForm("CambioContraseña", "administracion", FormMethod.Post, htmlAttributes: new { id = "fomrCamPasw", @class = "needs-validation", novalidate = "novalidate" }))
+            {
+                @Html.ValidationSummary(true)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Account.USUARIO, htmlAttributes: new { @for = "inputUsuario", @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Account.USUARIO, htmlAttributes: new { type = "text", @class = "form-control form-control-sm", id = "inputUsuario", placeholder = "Usuario", required = "required", @readonly = "readonly" })
+                    @Html.ValidationMessageFor(model => model.Account.USUARIO)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Account.EMAIL, htmlAttributes: new { @for = "inputEmail", @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Account.EMAIL, htmlAttributes: new { type = "email", @class = "form-control form-control-sm", id = "inputEmail", placeholder = "Email", required = "required", @readonly = "readonly" })
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Account.CONTRASEÑA_ACTUAL, htmlAttributes: new { @for = "inputPaswActual", @class = "control-label" })
+                    @Html.PasswordFor(model => model.Account.CONTRASEÑA_ACTUAL, htmlAttributes: new { type = "password", @class = "form-control form-control-sm", id = "inputPaswActual", placeholder = "Contraseña Actual", required = "required" })
+                    <div class="invalid-feedback">
+                        @Html.ValidationMessage("_Contraseña")
+                        <span>Por favor indique una contraseña</span>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            @Html.LabelFor(model => model.Account.NUEVA_CONTRASEÑA, htmlAttributes: new { @for = "inputPaswNew", @class = "control-label" })
+                            @Html.PasswordFor(model => model.Account.NUEVA_CONTRASEÑA, htmlAttributes: new { type = "password", @class = "form-control form-control-sm", id = "inputPaswNew", placeholder = "Nueva Contraseña", required = "required" })
+                            <div class="invalid-feedback">
+                                <span>Por favor indique la nueva contraseña</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            @Html.LabelFor(model => model.Account.CONFIRM_CONTRASEÑA, htmlAttributes: new { @for = "inputPaswNewConf", @class = "control-label" })
+                            @Html.PasswordFor(model => model.Account.CONFIRM_CONTRASEÑA, htmlAttributes: new { type = "password", @class = "form-control form-control-sm", id = "inputPaswNewConf", placeholder = "Confirmar Contraseña", required = "required" })
+                            <div class="invalid-feedback">
+                                <span>Por favor confirme la nueva contraseña</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-outline-success btn-block">Cambiar</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+
+
+@*@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Account</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.USUARIO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.USUARIO)
+            @Html.ValidationMessageFor(model => model.USUARIO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EMAIL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EMAIL)
+            @Html.ValidationMessageFor(model => model.EMAIL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CONTRASEÑA_ACTUAL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CONTRASEÑA_ACTUAL)
+            @Html.ValidationMessageFor(model => model.CONTRASEÑA_ACTUAL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NUEVA_CONTRASEÑA)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NUEVA_CONTRASEÑA)
+            @Html.ValidationMessageFor(model => model.NUEVA_CONTRASEÑA)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CONFIRM_CONTRASEÑA)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CONFIRM_CONTRASEÑA)
+            @Html.ValidationMessageFor(model => model.CONFIRM_CONTRASEÑA)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}*@

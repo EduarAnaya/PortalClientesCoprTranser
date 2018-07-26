@@ -1,0 +1,67 @@
+﻿@model IEnumerable<PortalClientesCoprTranser.Models.Facturacion.Facturas>
+
+@if (ViewData.ModelState.Any(x => x.Value.Errors.Any()))
+{
+    <div class="alert alert-primary">
+        <a href="#" class="close" data-dismiss="alert">×</a>
+        @Html.ValidationSummary(true, "Aviso:")
+        @Html.ValidationMessage("Error")
+    </div>
+}
+else
+{
+    <script>
+        $(function () {
+            var opcionies = {
+                "scrollY": "30rem",
+                "scrollCollapse": true,
+                "order": [[2, "desc"]],
+            }
+            $('#table_FactHisto').DataTable(opcionies);
+        })
+    </script>
+    <h4>Resultados de busqueda</h4>
+    <div class="row cont-Col">
+        <div id="cont-tableHistoFac" class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="card card-Transparente">
+                <div class="card-header text-left">
+                    <i class="fas fa-list-ol"></i>Listado
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="table_FactHisto" class="display table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Nro. Factura</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha Emite</th>
+                                    <th>Fecha Vence</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.FACTURA</td>
+                                        <td>@item.NOMCLIENTE</td>
+                                        <td>@item.FECEMITE</td>
+                                        <td>@item.FECVENCE</td>
+                                        <td>
+                                            <span class="money">@item.VALOR_FACT</span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <script>
+                                $(function () {
+                                    $('.money').formatCurrency();
+                                })
+                            </script>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<PortalClientesCoprTranser.Models.Facturacion.Facturas>
+@{
+    ViewBag.Title = "Pendientes";
+    Layout = "~/Views/_Layouts/_LayoutPrincipal.cshtml";
+}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="@Url.Action("Inicio", "Home")">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Facturación</li>
+        <li class="breadcrumb-item active" aria-current="page">Facturas Pendientes</li>
+    </ol>
+</nav>
+
+@if (ViewData.ModelState.Any(x => x.Value.Errors.Any()))
+{
+    <div class="alert alert-primary">
+        <a href="#" class="close" data-dismiss="alert">×</a>
+        @Html.ValidationSummary(true, "Aviso:")
+        @Html.ValidationMessage("Error")
+    </div>
+}
+else
+{
+    <div class="container-fuid">
+        <div class="row">
+            <div class="col" style="text-align: left;">
+                <h3>Facturas Pendientes</h3>
+            </div>
+        </div>
+        <div class="row">
+        </div>
+    </div>
+    
+    <div class="row cont-Col">
+        <div id="cont-tableFactPen" class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="card card-Transparente">
+                <div class="card-header text-left">
+                    <i class="fas fa-list-ol"></i>Listado
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="table_FactPendientes" class="display table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Nro. Factura</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha Emite</th>
+                                    <th>Fecha Vence</th>
+                                    <th>Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.FACTURA</td>
+                                        <td>@item.NOMCLIENTE</td>
+                                        <td>@item.FECEMITE</td>
+                                        <td>@item.FECVENCE</td>
+                                        <td>
+                                            <span class="money">@item.VALOR_FACT</span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <script>
+                                $(function () {
+                                    $('.money').formatCurrency();
+                                })
+                            </script>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+}

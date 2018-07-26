@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{07D59218-7048-4A37-901D-92A806EB80C7}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PortalClientesCoprTranser</RootNamespace>
+    <AssemblyName>PortalClientesCoprTranser</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Oracle.DataAccess, Version=4.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\orant\Odac11\product\11.2.0\client_1\odp.net\bin\4\Oracle.DataAccess.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\administracionController.cs" />
+    <Compile Include="Controllers\FacturacionController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ViajesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\administracion\Account.cs" />
+    <Compile Include="Models\administracion\AccountModel.cs" />
+    <Compile Include="Models\administracion\AccountViewModel.cs" />
+    <Compile Include="Models\Facturacion\Facturas.cs" />
+    <Compile Include="Models\Facturacion\FacturasModel.cs" />
+    <Compile Include="Models\Facturacion\FacturasViewModel.cs" />
+    <Compile Include="Models\model_DB\db_conexion.cs" />
+    <Compile Include="Models\model_DB\db_paramCon.cs" />
+    <Compile Include="Models\model_DB\PROC_CLEINTES_DB.cs" />
+    <Compile Include="Models\Viajes\Viajes.cs" />
+    <Compile Include="Models\Viajes\ViajesModel.cs" />
+    <Compile Include="Models\Viajes\ViajesViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Global.asax" />
+    <Content Include="Recursos\Css\css_Home.css" />
+    <Content Include="Recursos\Css\css_Login.css" />
+    <Content Include="Recursos\img\backgroundAppFull.png" />
+    <Content Include="Recursos\img\backgroundAppFull2.png" />
+    <Content Include="Recursos\img\CalendarSVG.svg" />
+    <Content Include="Recursos\img\calidad_2014.png" />
+    <Content Include="Recursos\img\cert_Isos.png" />
+    <Content Include="Recursos\img\facturacionMenu.png" />
+    <Content Include="Recursos\img\help_Ball.png" />
+    <Content Include="Recursos\img\home_ball.png" />
+    <Content Include="Recursos\img\img_Glass.png" />
+    <Content Include="Recursos\img\iso_14001.png" />
+    <Content Include="Recursos\img\iso_9001.png" />
+    <Content Include="Recursos\img\Logo_Foot.png" />
+    <Content Include="Recursos\img\Logo_Head.png" />
+    <Content Include="Recursos\img\logSecure128x128.png" />
+    <Content Include="Recursos\img\ohsas_18001.png" />
+    <Content Include="Recursos\img\seting_Ball.png" />
+    <Content Include="Recursos\img\tag_Ubicacion.png" />
+    <Content Include="Recursos\img\truck_Pos.png" />
+    <Content Include="Recursos\img\truck_Pos_Stop.png" />
+    <Content Include="Recursos\img\truck_Pos_Tran.png" />
+    <Content Include="Recursos\img\viajes_Ball.png" />
+    <Content Include="Recursos\js\js_Edit\js_Chart-Edit.js" />
+    <Content Include="Recursos\js\js_Edit\js_Custom-Edit.js" />
+    <Content Include="Recursos\js\js_Edit\js_Login.js" />
+    <Content Include="Recursos\js\js_Edit\js_Tables-Edit.js" />
+    <Content Include="Recursos\js\js_Prov\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Recursos\js\js_Prov\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Recursos\js\js_Prov\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Recursos\js\js_Prov\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Recursos\js\js_Prov\bootstrap\css\bootstrap.css" />
+    <Content Include="Recursos\js\js_Prov\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Recursos\js\js_Prov\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Recursos\js\js_Prov\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Recursos\js\js_Prov\bootstrap\js\bootstrap.js" />
+    <Content Include="Recursos\js\js_Prov\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Recursos\js\js_Prov\chart.js\Chart.bundle.js" />
+    <Content Include="Recursos\js\js_Prov\chart.js\Chart.bundle.min.js" />
+    <Content Include="Recursos\js\js_Prov\chart.js\Chart.js" />
+    <Content Include="Recursos\js\js_Prov\chart.js\Chart.min.js" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\css\dataTables.bootstrap.css" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\css\dataTables.bootstrap.min.css" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\css\dataTables.bootstrap4.css" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\css\dataTables.foundation.css" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\css\dataTables.foundation.min.css" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\css\dataTables.jqueryui.css" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\css\dataTables.jqueryui.min.css" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\css\dataTables.semanticui.css" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\css\dataTables.semanticui.min.css" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\css\jquery.dataTables.css" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\css\jquery.dataTables.min.css" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\images\sort_asc.png" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\images\sort_asc_disabled.png" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\images\sort_both.png" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\images\sort_desc.png" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\images\sort_desc_disabled.png" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\js\dataTables.bootstrap.js" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\js\dataTables.bootstrap.min.js" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\js\dataTables.bootstrap4.js" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\js\dataTables.foundation.js" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\js\dataTables.foundation.min.js" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\js\dataTables.jqueryui.js" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\js\dataTables.jqueryui.min.js" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\js\dataTables.semanticui.js" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\js\dataTables.semanticui.min.js" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\js\jquery.dataTables.js" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\DataTables-1.10.18\js\jquery.dataTables.min.js" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\datatables.css" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\datatables.js" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\datatables.min.css" />
+    <Content Include="Recursos\js\js_Prov\datatables.net\datatables.min.js" />
+    <Content Include="Recursos\js\js_Prov\font-awesome\css\font-awesome.css" />
+    <Content Include="Recursos\js\js_Prov\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Recursos\js\js_Prov\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Recursos\js\js_Prov\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Recursos\js\js_Prov\formatCurrency\jquery.formatCurrency-1.4.0.js" />
+    <Content Include="Recursos\js\js_Prov\formatCurrency\jquery.formatCurrency-1.4.0.min.js" />
+    <Content Include="Recursos\js\js_Prov\formatCurrency\jquery.formatCurrency.es-CO.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\additional-methods.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\jquery.validate.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\jquery.validate.min.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_ar.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_az.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_bg.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_bn_BD.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_ca.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_cs.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_da.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_de.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_el.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_es.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_es_AR.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_es_PE.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_et.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_eu.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_fa.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_fi.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_fr.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_ge.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_gl.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_he.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_hr.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_hu.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_hy_AM.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_id.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_is.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_it.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_ja.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_ka.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_kk.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_ko.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_lt.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_lv.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_mk.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_my.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_nl.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_no.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_pl.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_pt_BR.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_pt_PT.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_ro.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_ru.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_sd.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_si.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_sk.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_sl.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_sr.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_sr_lat.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_sv.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_th.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_tj.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_tr.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_uk.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_ur.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_vi.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_zh.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\messages_zh_TW.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\methods_de.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\methods_es_CL.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\methods_fi.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\methods_nl.js" />
+    <Content Include="Recursos\js\js_Prov\jquery-validation\localization\methods_pt.js" />
+    <Content Include="Recursos\js\js_Prov\jquery.cookie\jquery.cookie.js" />
+    <Content Include="Recursos\js\js_Prov\jquery.cookie\MIT-LICENSE.txt" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\AUTHORS.txt" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\external\jquery\jquery.js" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\images\ui-icons_444444_256x240.png" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\images\ui-icons_555555_256x240.png" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\images\ui-icons_777620_256x240.png" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\images\ui-icons_777777_256x240.png" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\index.html" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\jquery-ui.css" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\jquery-ui.js" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\jquery-ui.min.css" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\jquery-ui.min.js" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\jquery-ui.structure.css" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\jquery-ui.structure.min.css" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\jquery-ui.theme.css" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\jquery-ui.theme.min.css" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\LICENSE.txt" />
+    <Content Include="Recursos\js\js_Prov\jquery\core.js" />
+    <Content Include="Recursos\js\js_Prov\jquery\jquery.js" />
+    <Content Include="Recursos\js\js_Prov\jquery\jquery.min.js" />
+    <Content Include="Recursos\js\js_Prov\jquery\jquery.slim.js" />
+    <Content Include="Recursos\js\js_Prov\jquery\jquery.slim.min.js" />
+    <Content Include="Recursos\js\js_Prov\leaflet\images\layers-2x.png" />
+    <Content Include="Recursos\js\js_Prov\leaflet\images\layers.png" />
+    <Content Include="Recursos\js\js_Prov\leaflet\images\marker-icon-2x.png" />
+    <Content Include="Recursos\js\js_Prov\leaflet\images\marker-icon.png" />
+    <Content Include="Recursos\js\js_Prov\leaflet\images\marker-shadow.png" />
+    <Content Include="Recursos\js\js_Prov\leaflet\leaflet-src.esm.js" />
+    <Content Include="Recursos\js\js_Prov\leaflet\leaflet-src.js" />
+    <Content Include="Recursos\js\js_Prov\leaflet\leaflet.css" />
+    <Content Include="Recursos\js\js_Prov\leaflet\leaflet.js" />
+    <Content Include="Recursos\js\js_Prov\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="Recursos\js\js_Prov\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.css" />
+    <Content Include="Recursos\js\js_Prov\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.js" />
+    <Content Include="Recursos\js\js_Prov\malihu-custom-scrollbar-plugin\mCSB_buttons.png" />
+    <Content Include="Recursos\js\js_Prov\popper.js\esm\popper-utils.js" />
+    <Content Include="Recursos\js\js_Prov\popper.js\esm\popper-utils.min.js" />
+    <Content Include="Recursos\js\js_Prov\popper.js\esm\popper.js" />
+    <Content Include="Recursos\js\js_Prov\popper.js\esm\popper.min.js" />
+    <Content Include="Recursos\js\js_Prov\popper.js\popper-utils.js" />
+    <Content Include="Recursos\js\js_Prov\popper.js\popper-utils.min.js" />
+    <Content Include="Recursos\js\js_Prov\popper.js\popper.js" />
+    <Content Include="Recursos\js\js_Prov\popper.js\popper.min.js" />
+    <Content Include="Recursos\js\js_Prov\popper.js\umd\popper-utils.js" />
+    <Content Include="Recursos\js\js_Prov\popper.js\umd\popper-utils.min.js" />
+    <Content Include="Recursos\js\js_Prov\popper.js\umd\popper.js" />
+    <Content Include="Recursos\js\js_Prov\popper.js\umd\popper.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Recursos\js\js_Prov\font-awesome\less\" />
+    <Folder Include="Recursos\js\js_Prov\font-awesome\scss\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_Layouts\_LayoutPrincipal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Inicio.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Recursos\js\js_Prov\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Recursos\js\js_Prov\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Recursos\js\js_Prov\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Recursos\js\js_Prov\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Recursos\js\js_Prov\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Recursos\js\js_Prov\jquery.cookie\component.json" />
+    <Content Include="Recursos\js\js_Prov\jquery.cookie\cookie.jquery.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\desarrollo_svrLocal.pubxml" />
+    <Content Include="Views\Home\Ayuda.cshtml" />
+    <Content Include="Views\Facturacion\Pendientes.cshtml" />
+    <Content Include="Views\Facturacion\Vencidas.cshtml" />
+    <Content Include="Views\Facturacion\Estcartera.cshtml" />
+    <Content Include="Views\Facturacion\Histfacturas.cshtml" />
+    <Content Include="Views\Viajes\ViajesCurso.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Viajes\HistViajes.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Viajes\detViajesCurso.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Viajes\HistViajesSearch.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Facturacion\SearchHistfacturas.cshtml" />
+    <Content Include="Recursos\js\js_Prov\jqueryUI\package.json" />
+    <Content Include="Views\Viajes\loadMapa.cshtml" />
+    <Content Include="Views\Parciales\_Error.cshtml" />
+    <Content Include="Views\administracion\CambioContraseña.cshtml" />
+    <Content Include="Recursos\js\js_Prov\leaflet\leaflet-src.esm.js.map" />
+    <Content Include="Recursos\js\js_Prov\leaflet\leaflet-src.js.map" />
+    <Content Include="Recursos\js\js_Prov\leaflet\leaflet.js.map" />
+    <Content Include="Views\Parciales\_Footer.cshtml" />
+    <Content Include="Views\_Layouts\_LayoutLogin.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Facturacion\detcartera.cshtml" />
+    <Content Include="Views\Facturacion\minMax.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52976/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
